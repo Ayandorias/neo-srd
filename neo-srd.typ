@@ -1,0 +1,234 @@
+#import "@local/neo-core:0.1.0" as neo
+
+#import "doc-properties.typ" as srd
+#import "color-theme.typ": *
+
+
+#let chapter-font = (
+    size: 16pt, 
+    font: "Controwell", 
+    fill: amber.at("700")
+)
+#let section-font = (
+  size: 14pt, 
+  font: "Controwell",
+    fill: amber.at("800")
+)
+
+#let subsection-font = (
+  size: 12pt, 
+  font: "Controwell",
+  fill: gray.at("800")//color.amber.at("800")
+)
+
+#let toc-config(body) = {
+  // set list(marker: sym.arrow) // Oder ein beliebiges Zeichen wie "•" oder "‣"
+  // Setzten der Standard Farbe für den Text.
+  set text(lang: "de", size: 9.5pt, font: "New Computer Modern", fill: primary-color)
+
+  // Verhalten für Kapitel Überschrift.
+  show heading.where(level: 1): it => { 
+    if it.numbering == none {
+      return block(width: 100%)[
+        #v(1em)
+        // #text(..chapter-font)[#it.body]
+        #align(center, text(size: 20pt, font: "Controwell", it.body))
+        #v(1em) 
+      ]
+    }
+
+    // Ansonsten: Spezielles Kapitel-Design
+    set text(size: 9pt, weight: "regular") 
+    block(width: 100%, breakable: false)[
+      #align(right)[
+        // #text(size: 1em, style: "italic", font: "Controwell", weight: "bold", fill: primary-color)[KAPITEL]
+        #h(1em)
+        // #text(size: 5em, style: "italic", font: "Controwell", weight: "bold", fill: primary-color)[#counter(heading).display("1")]
+      ]
+      
+      #v(0.5em)
+      #text(..chapter-font)[#it.body]
+      #line(length: 100%, stroke: 2pt + amber.at("700"))
+    ]
+  }
+
+  show heading.where(level: 2): it => {
+    v(1em)
+    text(..section-font)[#it.body]
+    v(-0.6em) 
+    line(length: 100%, stroke: 1pt + amber.at("800"))
+    v(0.5em)
+  }
+
+  show heading.where(level: 3): it => {
+    v(.5em)
+    text(..subsection-font, fill: section-color)[#it.body]
+    v(-4pt)
+  }
+
+
+  // Global alle Überschriften ab Ebene 4 von der Nummerierung befreien
+  show heading.where(level: 4): set heading(numbering: none)
+  show heading.where(level: 5): set heading(numbering: none)
+
+  body
+  
+}
+
+
+/////////////////////////////////////////////////////////////////////////
+//      Beginn des Dokumentes
+///////////////////////////////////////////////////////////////////////// 
+
+#show: srd.use-format//.with(format: srd.a4)
+
+#show: neo.make-glossary
+#neo.register-glossary(neo.glossary)
+
+#show: toc-config
+#let title = "N.E.O."
+#let subtitle = "Nebenwelten Engine für das Omniversum"
+
+#set document(title: title + " - " + subtitle)
+#set text(font: "Libertinus Serif", size: 10pt, lang: "de")
+#set heading(numbering: "1.1.")
+// #set page(numbering: "I")
+
+#show: srd.background
+
+
+// --- TITELBLATT ---
+// #v(5em)
+#align(center + horizon)[
+  #text(size: 32pt, weight: "bold")[#title] \
+  #v(1em)
+  #text(size: 18pt)[#subtitle] \
+  #v(2em)
+  #text(size: 14pt)[System Referenzdokument (SRD)]
+]
+#pagebreak()
+
+// --- IMPRESSUM & LIZENZ ---
+#set page(numbering: none) // Keine Seitenzahl auf dem Impressum
+#v(1fr) // Drückt den Text an den unteren Rand der Seite (optional)
+
+#text(size: 16pt, weight: "bold")[Rechtliche Informationen]
+
+Das Systemreferenzdokument („N.E.O. SRD“) wird unter den Bedingungen der Creative Commons Namensnennung 4.0 International Public License („CC-BY-4.0“) kostenlos zur Verfügung gestellt. 
+
+Die Inhalte dieses Dokuments dürfen auf jede nach CC-BY-4.0 gestattete Weise verwendet werden, sofern jeweils die folgende Namensnennungserklärung hinzugefügt wird:
+
+#quote(block: true)[
+  _Dieses Werk enthält Material aus dem Nebenwelten Engine für das Omniversum SRD („N.E.O. SRD“). Das N.E.O. SRD ist lizenziert gemäß der Creative Commons Namensnennung 4.0 International Public License (verfügbar unter https://creativecommons.org/licenses/by/4.0/legalcode.de)._
+]
+
+Zulässig sind Hinweise darauf, dass ein Werk „kompatibel mit der N.E.O. Engine“ oder „N.E.O.-kompatibel“ ist.
+#pagebreak()
+
+#show outline.entry: it => {
+  let target = it.element
+  if target.func() == heading {
+    context {
+      let page_num = counter(page).at(target.location()).at(0)
+      
+      // Einrücken basierend auf der Ebene (Level)
+      let indent_size = if target.level > 2 { 0.75em } else { 0em }//(target.level - 1) * 1.5em
+      let text_size = if target.level == 1 {
+        (size: 11pt, fill: amber.at("800"), weight: "bold") 
+      } else {
+        (size: 10pt, fill: gray.at("600")) 
+      }
+      set text(text_size.size, text_size.fill)
+
+      // let text_fill = if(target.level)
+      
+
+      pad(left: indent_size)[
+        #link(target.location())[
+          #if target.level == 1 {
+            v(1.5em)
+          }
+          #text(weight: "bold")[#target.body] #h(1fr) #page_num
+          // #if target.level == 2 {
+            #v(0.25em)
+          // }
+          #if target.level == 1 {
+            v(0.25em)
+          }
+        ]
+      ]
+      v(0.5em, weak: true) // Vertikaler Abstand zwischen den Zeilen
+    }
+  } else {
+    it
+  }
+}
+#{
+  // show heading: set heading(numbering: none)
+  set outline.entry(fill: none)
+  v(5em)
+  align(center, text(size: 20pt, font: "Controwell", "Inhaltsverzeichnis"))
+  columns(3)[
+    #outline(title: none, depth: 3)
+  ]
+}
+
+// --- KAPITELSTRUKTUR ---
+// #set page(numbering: "1")
+// #counter(page).update(1)
+// --- KAPITELSTRUKTUR ---
+#pagebreak()
+
+#columns(2, ..srd.columns-gutter)[
+
+#include "kernmechanik.typ"
+
+#include "character.typ"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+= Baukasten für Magie & Fähigkeiten
+== Struktur der Domänen
+== Variablen des Webens
+== Resonanzen
+== Ressourcenkosten
+]
+
+
+#include "clothing.typ"
+
+#include "weapons.typ"
+
+#columns(2, ..srd.columns-gutter)[
+= Antagonisten-Schablonen
+== Profil-Schablone: Fokus Agilität
+== Profil-Schablone: Fokus Physis
+
+#include "traits.typ"
+#include "skills.typ"
+
+
+
+== Matrix für Befähigungen
+== Universelle Referenzbeispiele
+== Richtlinien zur Erstellung
+// ]
+
+// -- Begin Abkürzungsverzeichnis
+// #pagebreak()
+// #align(center, heading(level: 1, numbering: none)[Glossar])
+= Glossar
+// #columns()[
+  #neo.print-glossary(neo.glossary, disable-back-references: true)
+]

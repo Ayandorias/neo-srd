@@ -1,0 +1,10 @@
+{
+  "tinymist.typstExtraArgs": [
+    "--input=light=amber",
+    "--input=dark=gray",
+    "--input=lang=de"
+  ],
+  "tinymist.exportPdf": "onSave",
+  "tinymist.outputPath": "${workspaceFolder}/generated/neo-srd",
+  "tinymist.entry": "${workspaceFolder}/neo-srd.typ"
+}
