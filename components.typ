@@ -96,9 +96,18 @@
   ]
 
   #action("Mögliche Tugenden:", prof.pros.join(", "))
-    
-  #action("Mögliche Laster:", prof.cons.join(", "))
+  #action("Mögliche Nachteil:", prof.cons.join(", "))
   #action("Typische Fertigkeiten:", prof.skills.join(", "))
+
+  #if "look" in prof [
+    #table(
+      columns: (auto, 1fr),
+      align: (left, left),
+      stroke: table-stroke,
+      fill: table-fill,
+      ..prof.look
+    )
+  ]
 ]
 
 #let render_skill(skill) = {
@@ -140,6 +149,10 @@ font_size: 12pt) = {
   if trait.regel != none {
     action("Regelanpassung:")[#trait.regel]
   }
+
+  if "kat" in trait [
+    #action("Kategorie:", trait.kat)
+  ]
     v(1.5em)
 }
 

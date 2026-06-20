@@ -72,19 +72,40 @@ Um den Charakter zu individualisieren können Vor- und Nachteile eingesetzt werd
 ==== Einschränkung
 Jedem Charakter kann max. 9 Stufen an Vorteilen haben. Dafür müssen dann aber Nachteile in einer Gesamthöhe von 18 Stufen ausgewählt werden.
 
+==== Erzeugen
+Vor- und Nachteile können während des Charakterlebens hinzugefügt werden. Diese werden entweder durch den Spielleiter vergeben oder in Rücksprache mit diesem getroffen.
+
 == Abgeleiteten Grundwerte
+
+=== #neo.gls-long("ks") (#neo.gls-short("ks"))
+
+Die Kristallstufe gibt an, welchee Potenzial der Charakter besitzt. Jeder magiebegabte Charakter hat zu beginn der Charaktergenerierung eine Kristallstufe von 1.
 
 === #neo.gls-long("bwr") (#neo.gls-short("bwr"))
 Um sicherzustellen ,dass sich ein Cahrakter in einem bestimmten Rahmen bewegt wird für jeden Charakter der Bewegungsradius berechnet. 
 Der Quotient der Formel:
-#neo.formula.bwr.f
+
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.bwr.f)
+)
+
 gibt an, wieviele Hex-Felder ein Charakter in der Lage sich fort zu bewegen.
 
 
 
 === #neo.gls-long("rkt") (#neo.gls-short("rkt"))
 Die Reaktion bezieht sich immer auf die aktuelle Kampffertigkeit die eingesetzt wird.
-#neo.formula.rkt.f
+
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.rkt.f)
+)
+
 Die Reaktion dient als Malus beim Angreifer.
 
 === Psychische Resistenz
@@ -110,7 +131,39 @@ Die Reaktion dient als Malus beim Angreifer.
 === #neo.gls-long("gem")
 Die Geistige Ermüdung stellt die maximale mentale Belastbarkeit des Charakters dar. Dieser Pool gibt an, wie viel geistige Kraft, Willensstärke und absolute Konzentration ein Charakter aufbringen kann, um magische Energien zu formen, bevor sein Verstand erschöpft ist.
 
-#neo.formula.gem.f 
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.gem.f )
+)
+
+=== Menschlichkeit und Wahnsinn
+
+Der Verlust von Menschlichkeit (z. B. durch grausame Taten) und der Verfall in den Wahnsinn (z. B. durch traumatische Erlebnisse) werden unter  Geistiger Stabilität zusammengefasst. 
+
+Die Geistige Stabilität ist direkt an die GEM gekoppelt. Jeder Punkt der geistigen Stabilität verringet automatisch die GEM um einen Punkt. 
+
+=== Nachteile
+Die geistige Stabilität und die Nachteile eines Charakters beeinflussen sich gegenseitig:
+
+Bei der Charaktergenerierung können Nachteile Einfluss auf die Geistige Stabilität haben. 
+
+Wird im Verlauf des Cahrakterlebens die geistige Stabilität beeinträchtigt, kann der Spielleiter dem Charakter einen passenden Nachteil zuweisen.
+
+=== Geistige Regneration
+Der Verlust von geistiger Stabilität kann geheilt werden. Wenn sich der Charakter mental erholt, kann der Spielleiter die Regeneration erlauben. 
+
+
+
+
+
+
+
+
+
+
+
 
 === Lebensenergie
 Jeder Charakter besitzt über die gleiche Höhe an Lebensenergie. Diese ist in drei Bereiche unterteilt.
@@ -121,7 +174,12 @@ Jeder Charakter besitzt über die gleiche Höhe an Lebensenergie. Diese ist in d
 
 === #neo.gls-long("ulw") (#neo.gls-short("ulw"))
 
-#neo.formula.ulw.f
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.ulw.f)
+)
 
 == Fertigkeiten auswählen
 Nachdem die Grundlegenden Informationen des Charakters aufgeschrieben sind, werden im nächsten Schritt die Fertigkeiten ausgewählt.
@@ -129,11 +187,21 @@ Bei der Auswahl der Profession und der Kultur sind bereits einige Fertigkeiten a
 
 Die Anzahl an Fertigkeiten, die einem Charakter zur Verfügung stehen liegt bei:
 
-#neo.formula.fa.f
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.fa.f)
+)
 
 Nachdem die Fertigkeiten ausgewählt wurden, kann der Charakter individualisiert werden. Hier stehen im 
 
-#neo.formula.fp.f
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.fp.f)
+)
 
 zur Vefügungdie er frei auf die Fertigkeiten aufteilen kann. Das einzige Limit liegt bei dem max. #neo.gls-short("fw") von 4.
 
@@ -160,6 +228,12 @@ Anschließend sucht der Spielleiter sich die nötigen AP aus der folgenden Tabel
   align: (left, center, center),
   ..neo.level
 )
+
+
+== Zeitrechnung
+Die Ausgestaltung von Kalendern, planetaren Zyklen und Feiertagen obliegt vollständig dem jeweiligen Setting. Steht ein spezifisches Kalendersystem zur Verfügung, wird in diesem Schritt der exakte Geburtstag des Protagonisten ermittelt (beispielsweise durch einen Wurf mit 2W12 für den Monat und 3W12 für den Tag) und im Protagonistenbuch dokumentiert. Fehlt eine solche zeitliche Struktur, wird dieser Schritt übersprungen.
+
+
 
 = Fertigkeitssystem
 == Kalkulation des Gesamtfertigkeitswerts (GFW)
@@ -195,7 +269,12 @@ Bei erreichen bestimmter Stufen steigt die Intelligenz automatisch um jeweils +1
 == Steigerung der Fertigkeiten
 Jede Fertigkeit besitzt eine Trainingsstufe. Mit dessen Hilfe wird ermittelt wie hoch die Anzahl an Erfahrungspunkten ist, die eingesetzt werden müssen um die Fertigkeit um einen Punkt zu steigern.
 
-#neo.formula.epf.f
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.epf.f)
+)
 
 
 = Professionen

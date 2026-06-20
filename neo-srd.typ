@@ -2,6 +2,7 @@
 
 #import "doc-properties.typ" as srd
 #import "color-theme.typ": *
+#import "version.typ": *
 
 
 #let chapter-font = (
@@ -12,11 +13,17 @@
 #let section-font = (
   size: 14pt, 
   font: "Controwell",
-    fill: amber.at("800")
+  fill: amber.at("800")
 )
 
 #let subsection-font = (
   size: 12pt, 
+  font: "Controwell",
+  fill: gray.at("800")//color.amber.at("800")
+)
+
+#let subsubsection-font = (
+  size: 11pt, 
   font: "Controwell",
   fill: gray.at("800")//color.amber.at("800")
 )
@@ -39,13 +46,7 @@
 
     // Ansonsten: Spezielles Kapitel-Design
     set text(size: 9pt, weight: "regular") 
-    block(width: 100%, breakable: false)[
-      #align(right)[
-        // #text(size: 1em, style: "italic", font: "Controwell", weight: "bold", fill: primary-color)[KAPITEL]
-        #h(1em)
-        // #text(size: 5em, style: "italic", font: "Controwell", weight: "bold", fill: primary-color)[#counter(heading).display("1")]
-      ]
-      
+    block(width: 100%)[
       #v(0.5em)
       #text(..chapter-font)[#it.body]
       #line(length: 100%, stroke: 2pt + amber.at("700"))
@@ -54,10 +55,11 @@
 
   show heading.where(level: 2): it => {
     v(1em)
-    text(..section-font)[#it.body]
-    v(-0.6em) 
-    line(length: 100%, stroke: 1pt + amber.at("800"))
-    v(0.5em)
+    block(width: 100%)[
+      #text(..section-font)[#it.body]
+      #v(-0.6em)
+      #line(length: 100%, stroke: 1pt + amber.at("800"))
+      #v(0.5em)]
   }
 
   show heading.where(level: 3): it => {
@@ -68,7 +70,12 @@
 
 
   // Global alle Überschriften ab Ebene 4 von der Nummerierung befreien
-  show heading.where(level: 4): set heading(numbering: none)
+  show heading.where(level: 4): it => {
+    v(.25em)
+    text(..subsubsection-font, fill: section-color)[#it.body]
+    v(-2pt)
+  }
+  //set heading(numbering: none)
   show heading.where(level: 5): set heading(numbering: none)
 
   body
@@ -92,38 +99,10 @@
 #set document(title: title + " - " + subtitle)
 #set text(font: "Libertinus Serif", size: 10pt, lang: "de")
 #set heading(numbering: "1.1.")
-// #set page(numbering: "I")
 
 #show: srd.background
 
-
-// --- TITELBLATT ---
-// #v(5em)
-#align(center + horizon)[
-  #text(size: 32pt, weight: "bold")[#title] \
-  #v(1em)
-  #text(size: 18pt)[#subtitle] \
-  #v(2em)
-  #text(size: 14pt)[System Referenzdokument (SRD)]
-]
-#pagebreak()
-
-// --- IMPRESSUM & LIZENZ ---
-#set page(numbering: none) // Keine Seitenzahl auf dem Impressum
-#v(1fr) // Drückt den Text an den unteren Rand der Seite (optional)
-
-#text(size: 16pt, weight: "bold")[Rechtliche Informationen]
-
-Das Systemreferenzdokument („N.E.O. SRD“) wird unter den Bedingungen der Creative Commons Namensnennung 4.0 International Public License („CC-BY-4.0“) kostenlos zur Verfügung gestellt. 
-
-Die Inhalte dieses Dokuments dürfen auf jede nach CC-BY-4.0 gestattete Weise verwendet werden, sofern jeweils die folgende Namensnennungserklärung hinzugefügt wird:
-
-#quote(block: true)[
-  _Dieses Werk enthält Material aus dem Nebenwelten Engine für das Omniversum SRD („N.E.O. SRD“). Das N.E.O. SRD ist lizenziert gemäß der Creative Commons Namensnennung 4.0 International Public License (verfügbar unter https://creativecommons.org/licenses/by/4.0/legalcode.de)._
-]
-
-Zulässig sind Hinweise darauf, dass ein Werk „kompatibel mit der N.E.O. Engine“ oder „N.E.O.-kompatibel“ ist.
-#pagebreak()
+#include "impressum.typ"
 
 #show outline.entry: it => {
   let target = it.element
@@ -182,27 +161,9 @@ Zulässig sind Hinweise darauf, dass ein Werk „kompatibel mit der N.E.O. Engin
 #columns(2, ..srd.columns-gutter)[
 
 #include "kernmechanik.typ"
-
+#include "magie.typ"
 #include "character.typ"
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-= Baukasten für Magie & Fähigkeiten
-== Struktur der Domänen
-== Variablen des Webens
-== Resonanzen
-== Ressourcenkosten
 ]
 
 
@@ -211,10 +172,9 @@ Zulässig sind Hinweise darauf, dass ein Werk „kompatibel mit der N.E.O. Engin
 #include "weapons.typ"
 
 #columns(2, ..srd.columns-gutter)[
-= Antagonisten-Schablonen
-== Profil-Schablone: Fokus Agilität
-== Profil-Schablone: Fokus Physis
-
+= Spezies
+#include "gegner.typ"
+#include "tiere.typ"
 #include "traits.typ"
 #include "skills.typ"
 
