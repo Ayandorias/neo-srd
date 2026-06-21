@@ -2,7 +2,9 @@
 #import "components.typ": *
 
 
-= Eigenschaften-Schablonen
+= Eigenschaften
+Um einen Cahrakter zu individualisieren, stehen eine Anzahl von Positiven und Negativen Eigenschaften zur Verfügung.
+
 == Positive Eigenschaften
 #for trait in neo.traits.pos [
   #render_traits(trait)

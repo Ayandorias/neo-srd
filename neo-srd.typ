@@ -161,17 +161,16 @@
 #columns(2, ..srd.columns-gutter)[
 
 #include "kernmechanik.typ"
-#include "magie.typ"
+#include "magic.typ"
 #include "character.typ"
-
-]
-
-
 #include "clothing.typ"
-
+]
+#include "armor.typ"
 #include "weapons.typ"
 
 #columns(2, ..srd.columns-gutter)[
+== Alchemistische Substanzen & Toxine
+
 = Spezies
 #include "gegner.typ"
 #include "tiere.typ"

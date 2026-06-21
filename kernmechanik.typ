@@ -210,7 +210,7 @@ Um einen Angriff auszuführen, werden folgende Schritte ausgeführt:
 
 #action("1. Ziehlauswahl", [Als erstes wird ein Ziel ausgewählt, welches angegriffen werden kann. hierbei spielt die Reichweite die entscheidene Rolle.])
 
-#action([2. #neo.gls("ew") berechnen], [Nun werden die Modifikatoren festgelegt. (Geziehlter Angriff, Sichtverhältnisse etc) Hieraus ergibt sich der #neo.gls("ew") für die vergleichende Probe.])
+#action("2." + neo.gls("ew") + "berechnen", [Nun werden die Modifikatoren festgelegt. (Geziehlter Angriff, Sichtverhältnisse etc) Hieraus ergibt sich der #neo.gls("ew") für die vergleichende Probe.])
 
 #action("3. Angriff ausführen", [Zuletzt wird der Angriff ausgeführ und die vergleichende Probe ermittelt, ob der Angriff erfolgreich ist oder nicht.])
 
@@ -305,13 +305,33 @@ Die Differenz misst die Präzision des Angriffs im Verhältnis zum #neo.gls("gfw
 )
 
 === Die finale Würfelanzahl
-Zur Ermittlung des Würfelpools können Modifikator, wie Einsatzfähigkeit und / oder Trefferzone, zur Differenz sowie die Waffenstufe addiert werden.
+Zur Ermittlung des Würfelpools können Modifikator, wie 
+
+#table(
+  columns: (1fr),
+  align: (left),
+  stroke: table-stroke,
+  fill: table-fill,
+  ..neo.fight_mod_diff
+)
+
+zur Differenz sowie die Waffenstufe addiert oder subtrahiert werden.
 
 #block(
   width: 100%,
   height: 60pt,
   stroke: 1pt + amber.at("600"),
   align(center + horizon, neo.formula.anw.f)
+)
+
+Bei Fernkampfwaffen die ein Projektil verschießen, kann die Stufe der Munition noch mit hinzu addiert werden.
+
+#table(
+  columns: (1fr, 50pt),
+  align: (left, center),
+  stroke: table-stroke,
+  fill: table-fill,
+  ..neo.munition_type
 )
 
 ==== Eskalationskaskade

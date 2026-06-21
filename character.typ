@@ -79,7 +79,7 @@ Vor- und Nachteile können während des Charakterlebens hinzugefügt werden. Die
 
 === #neo.gls-long("ks") (#neo.gls-short("ks"))
 
-Die Kristallstufe gibt an, welchee Potenzial der Charakter besitzt. Jeder magiebegabte Charakter hat zu beginn der Charaktergenerierung eine Kristallstufe von 1.
+Die #neo.gls-short("ks") gibt an, welchee Potenzial der Charakter besitzt. Jeder magiebegabte Charakter hat zu beginn der Charaktergenerierung eine #neo.gls-short("ks") von 1.
 
 === #neo.gls-long("bwr") (#neo.gls-short("bwr"))
 Um sicherzustellen ,dass sich ein Cahrakter in einem bestimmten Rahmen bewegt wird für jeden Charakter der Bewegungsradius berechnet. 

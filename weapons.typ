@@ -16,7 +16,23 @@
       [*Waffe*], [*Stufe*], [*Attr.*], [*Beschreibung*], [*Kosten*],  //[*Mult.*], 
       
       ..waffenliste.map(waffe => (
-        [#waffe.n], [#waffe.l], [#waffe.attr], [#waffe.d], [#waffe.cost Đ],  
+        box(
+          inset: (y: 0pt),
+          align(
+            horizon, 
+            heading(level: 3, numbering: none)[
+              #box(
+                inset:(y: -5pt),
+                // stroke: 1pt + red, 
+                
+                  text(font: "Libertinus Serif", size: 10pt, weight: "regular", waffe.n)
+                
+              )
+            ],
+          )
+        ),
+        
+        [#waffe.l], [#waffe.attr], [#waffe.d], [#waffe.cost Đ],  
         //[#waffe.mult], 
       )).flatten()
     )
@@ -28,7 +44,23 @@
       fill: table-fill,
       [*Waffe*], [*Stufe*], [*Attr.*], [*Reichweite*], [*Beschreibung*], [*Kosten*],
       ..waffenliste.map(waffe => (
-        [#waffe.n], [#waffe.l], [#waffe.attr],  
+        box(
+          inset: (y: 0pt),
+          align(
+            horizon, 
+            heading(level: 3, numbering: none)[
+              #box(
+                inset:(y: -5pt),
+                // stroke: 1pt + red, 
+                
+                  text(font: "Libertinus Serif", size: 10pt, weight: "regular", waffe.n)
+                
+              )
+            ],
+          )
+        ),
+        
+        [#waffe.l], [#waffe.attr],  
         //[#waffe.mult], 
         [#waffe.range], [#waffe.d], [#waffe.cost Đ],  
       )).flatten()

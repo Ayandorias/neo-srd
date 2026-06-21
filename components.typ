@@ -55,7 +55,7 @@
 #let render_magic(magic) = [
   #align(left, heading(level: 2, numbering: none)[#magic.name])
 
-  #for essenz in magic.essenz [
+  #for essenz in magic.fokus [
     #header(essenz.n)
     #description(essenz.d)
     #action("Basisattribut:", essenz.attr)
@@ -63,6 +63,39 @@
     #action("Trainingsstufe:", str(essenz.t))
   ]
 ]
+
+#let render_manifestations(manifs) = {
+  for (key, man) in manifs {
+    // Ausgabe der Basisdaten
+    [=== #man.name]
+    description([#man.desc])
+    action("Komplexität:", [#man.stufe])
+    action("Zauberdauer:", [#man.zauberdauer])
+    if "zmod" in man {
+      man.zmod
+    }
+
+    
+    if "modifikator" in man {
+      action("Modifikator", [#man.modifikator])
+    }
+
+    // Prüfung und Generierung der einfachen Tabelle
+    if "mod_data" in man {
+      parbreak()
+      table(
+        columns: (1fr, 1fr),
+        align: (center, center),
+        stroke: table-stroke,
+        fill: table-fill,
+        ..man.mod_data.flatten()
+      )
+    }
+
+    v(1em) // Abstand zur nächsten Manifestation
+  }
+}
+
 
 #let render_profession(prof) = [
   === #prof.name
@@ -109,6 +142,36 @@
     )
   ]
 ]
+
+#let render_resonanzen(resos) = {
+  for (key, res) in resos {
+    [=== #res.name]
+    description(res.desc)
+    action("Zauberdauer:", res.zauberdauer)
+    
+
+    if "reichweite_text" in res {
+      action("Reichweite:", res.reichweite_text)
+    }
+
+    if "rinhalt_ref" in res {
+      parbreak()
+      table(
+        columns: (1fr, 1fr),
+        align: center,
+        stroke: table-stroke,
+        fill: table-fill,
+        ..res.rinhalt_ref.flatten()
+      )
+    }
+
+    if "modifikator" in res {
+      action("Modifikator:", res.modifikator)
+    }
+
+    v(1em)
+  }
+}
 
 #let render_skill(skill) = {
   header(skill.n)
@@ -161,6 +224,3 @@ font_size: 12pt) = {
 
   description(weapon.d)
 }
-
-
-
