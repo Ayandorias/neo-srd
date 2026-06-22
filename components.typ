@@ -128,9 +128,9 @@
     )
   ]
 
-  #action("Mögliche Tugenden:", prof.pros.join(", "))
-  #action("Mögliche Nachteil:", prof.cons.join(", "))
-  #action("Typische Fertigkeiten:", prof.skills.join(", "))
+  #action("Positive Eigenschaften:", prof.pros.join(", "))
+  #action("Negative Eigenschaften:", prof.cons.join(", "))
+  #action("Empfohlene Fertigkeiten:", prof.skills.join(", "))
 
   #if "look" in prof [
     #table(

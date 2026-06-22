@@ -106,7 +106,7 @@ Die Reaktion bezieht sich immer auf die aktuelle Kampffertigkeit die eingesetzt 
   align(center + horizon, neo.formula.rkt.f)
 )
 
-Die Reaktion dient als Malus beim Angreifer.
+Der Verteidiger zwingt dem Angreifer einen Malus in Höhe seiner #neo.gls-short("rkt") auf den #neo.gls-short("ew") des Angriffs auf.
 
 === Psychische Resistenz
 #table(
@@ -182,7 +182,7 @@ Jeder Charakter besitzt über die gleiche Höhe an Lebensenergie. Diese ist in d
 )
 
 == Fertigkeiten auswählen
-Nachdem die Grundlegenden Informationen des Charakters aufgeschrieben sind, werden im nächsten Schritt die Fertigkeiten ausgewählt.
+Nachdem die grundlegenden Informationen des Charakters aufgeschrieben sind, werden im nächsten Schritt die Fertigkeiten ausgewählt.
 Bei der Auswahl der Profession und der Kultur sind bereits einige Fertigkeiten angegeben, die zur Orientierung des Charakters dienen.
 
 Die Anzahl an Fertigkeiten, die einem Charakter zur Verfügung stehen liegt bei:
@@ -194,7 +194,7 @@ Die Anzahl an Fertigkeiten, die einem Charakter zur Verfügung stehen liegt bei:
   align(center + horizon, neo.formula.fa.f)
 )
 
-Nachdem die Fertigkeiten ausgewählt wurden, kann der Charakter individualisiert werden. Hier stehen im 
+Nachdem die Fertigkeiten ausgewählt wurden, kann der Charakter individualisiert werden. Hier stehen ihm 
 
 #block(
   width: 100%,
@@ -203,7 +203,7 @@ Nachdem die Fertigkeiten ausgewählt wurden, kann der Charakter individualisiert
   align(center + horizon, neo.formula.fp.f)
 )
 
-zur Vefügungdie er frei auf die Fertigkeiten aufteilen kann. Das einzige Limit liegt bei dem max. #neo.gls-short("fw") von 4.
+zur Vefügung die frei auf die Fertigkeiten aufgeteilt werden können. Das einzige Limit liegt bei einem max. #neo.gls-short("fw") von 4.
 
 == Erfahrene Charaktere
 
@@ -239,7 +239,9 @@ Die Ausgestaltung von Kalendern, planetaren Zyklen und Feiertagen obliegt vollst
 == Kalkulation des Gesamtfertigkeitswerts (GFW)
 == Unerfahrenheits-Malus
 == Attributssteigerung
-Die Werte der Attribute werden einmalig beim erstellen des Charakters vergeben. Diese Attribute können nicht durch den Einsatz von #neo.gls("ep") gesteigert werden. Stattdessen bekommen Sie automatisch einen Bonus in Abhängigkeit von Fertigkeien und #neo.gls("fw"). Für jede erreichte Stufe erhält die Fertigkeit einen Modifikator von +1 auf den Attributswert. Dadurch kann ein Attribut max. um +4 Attributspunkte gesteigert werden.
+Attribute werden bei der Charaktererstellung festgelegt und können nicht mit Erfahrungspunkten gesteigert werden. Stattdessen wachsen sie durch die regelmäßige Nutzung der entsprechenden Fertigkeiten. Dabei werden nur die Fertigkeiten berücksichtigt, die auf demselben Basisattribut beruhen. Erreichen diese Fertigkeiten bestimmte Schwellenwerte, erhöht sich das zugehörige Basisattribut automatisch um einen Punkt. Ein Attribut kann auf diesem Weg maximal um vier Punkte über den Startwert hinauswachsen.
+
+Die Schwellenwerte für die Steigerung sind wie folgt gestaffelt:
 
 #text(size: 11pt, weight: "bold", "Stufe 1")\
 Drei Fertigkeien mit einem #neo.gls("fw") von 6.
@@ -253,16 +255,17 @@ Fünf Fertigkeiten mit einem #neo.gls("fw") von 7.
 #text(size: 11pt, weight: "bold", "Stufe 4")\
 Fünf Fertigkeiten mit einem #neo.gls("fw") von 9.
 
+Fertigkeiten, die auf zwei Basisattributen beruhen, zählen für beide Attribute gleichzeitig.
+
 === Besonderheit bei Intelligenz
-Die Intelligenz ist nicht abhängig von der Anzahl Anzahl der Fertigkeiten oder deren #neo.gls("fw"). 
-Stattdessen steigt die Intelligenz anhand der Gesamterfahrung die ein Cahrakter gemacht hat. Für jeden Punkt innerhalb der Attributssteigerung steigt der Intelligenzlevel ebenfalls um 1.
-Bei erreichen bestimmter Stufen steigt die Intelligenz automatisch um jeweils +1 an.
+
+Die Intelligenz ist nicht von der Anzahl der Fertigkeiten oder deren #neo.gls("fw") abhängig. Stattdessen ist die Intelligenz abhängig von der Gesamterfahrung, die ein Charakter gesammelt hat. Bei Erreichen bestimmter Erfahrungsstufen oder der entsprechenden Menge an #neo.gls("ep") erhöht sich die Intelligenz automatisch.
 
 #table(
-  columns: (1fr, 1fr),
+  columns: (1fr, 1fr, 1fr),
   stroke: table-stroke,
   fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
-  align: (center, center),
+  align: (center,),
   ..neo.int-level
 )
 

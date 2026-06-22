@@ -191,3 +191,62 @@
 // #columns()[
   #neo.print-glossary(neo.glossary, disable-back-references: true)
 ]
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// ### 4. Charaktergenerierung & Steigerung
+// * **Startfertigkeiten:** Bei den Professionen und Kulturen stehen "Typische Fertigkeiten". Bekommt der Spieler diese *gratis* auf ein bestimmtes Level, oder sind das nur *Empfehlungen*, wofür er seine `INT x 5` Punkte ausgeben sollte? Das muss explizit gemacht werden (z.B. *"Der Charakter erhält diese Fertigkeiten automatisch auf FW 2"* oder *"Empfohlene Fertigkeiten für die Punktverteilung"*).
+// * **Attributssteigerung (Meilensteine):** Die aktuelle Tabelle ("Stufe 1: Drei Fertigkeiten mit FW 6...") liest sich wie eine interne Notiz. 
+//   * **Lösung:** Erkläre das Prinzip vorher in einem Satz: *"Attribute können nicht mit Erfahrungspunkten (EP) gekauft werden. Sie steigen automatisch um +1 an, sobald der Charakter bestimmte Meilensteine bei seinen Fertigkeiten erreicht."*
+// * **Intelligenz-Steigerung:** Der Satz *"Für jeden Punkt innerhalb der Attributssteigerung steigt der Intelligenzlevel ebenfalls um 1"* ist verwirrend. 
+//   * **Besser:** *"Immer wenn ein anderes Attribut durch Meilensteine steigt, steigt auch die Intelligenz um 1."*
+// * **Arkane Stufe (AS):** *"Jeder magiebegabte Charakter hat zu Beginn eine AS von 1."* Was ist mit nicht-magischen Charakteren? Haben diese AS 0? (Wichtig für die AGW-Formel).
+
+// ### 5. Konsistenz & Terminologie
+// * **Tugenden vs. Positive Eigenschaften:** Im Generierungsteil nennst du sie "Positive Eigenschaften". In den Tabellen der Professionen und Kulturen steht aber "Mögliche Tugenden". Das muss im gesamten SRD zu **Positive Eigenschaften** vereinheitlicht werden.
+// * **Nachteile im Spiel:** Bei den Negativen Eigenschaften steht: *"Die Situation aktiviert das Nachteil. Dies erzwingt einen negativen Modifikator..."* Es fehlt die Ansage, *wer* das entscheidet. 
+//   * **Lösung:** *"Wenn der Spielleiter (Archivar) entscheidet, dass das Nachteil in der aktuellen Situation zum Tragen kommt, erleidet der Charakter den Malus."*
+
+// ### 6. Fehlende Inhalte & Lektorat (Wichtig für v0.5.0)
+// * **TBD / Leere Felder:** Bei einigen Fertigkeiten (z.B. *Elementarmagie, Chi-Magie, Beherrschungsmagie*) steht beim Basisattribut "TBD" oder es ist leer. Diese müssen vor der Veröffentlichung zwingend gefüllt werden.
+// * **Leere Kapitel:** Die Kapitel *Alchemistische Substanzen & Toxine*, *Spezies* und *Matrix für Befähigungen* sind aktuell nur leere Überschriften. 
+//   * **Lösung:** Schreibe einen kurzen Vermerk hinein: *"Diese Mechaniken sind Teil der Setting-spezifischen Erweiterungen und nicht im universellen SRD enthalten."*
+// * **PDF-Export-Artefakte:** Im Text finden sich viele getrennte Wörter (z.B. *Kam p f, p h y sisch, Fer tigkeiten, Cahrakter, g anze*). Das sind typische Fehler beim Extrahieren aus PDFs mit Blocksatz oder Ligaturen. Für das finale Layout muss das zwingend bereinigt werden, da es den Lesefluss stark stört.
+
+// ---
+
+// **Fazit zur v0.4.0:**
+// Das Gerüst der **N.E.O. Engine** ist extrem stark, besonders die Idee mit der *Eskalationskaskade* (gerade W6 = Erfolge) und dem *Kaskaden-Schock* bei der Heilung sind mechanisch brillant und heben das System von generischen d20-Systemen ab. 
+
+// Wenn du die oben genannten Punkte (besonders die **Schichten-Konvertierung**, das **AFW-Kürzel** und die **Schadens-Tabelle**) in der nächsten Version ausbesserst, hast du ein wasserdichtes, universelles SRD, das du bedenken an deine Tester verteilen kannst. 

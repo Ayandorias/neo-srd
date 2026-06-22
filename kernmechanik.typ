@@ -30,7 +30,7 @@ Eine vergleichende Probe dient der Feststellung eines Erfolgs. Das Gesamtergebni
 #action("2. Würfelwurf:", [Das Ergebnis des Wurfes wird mit dem zu erreichendem Zeilwert verglichen. Ist der Würfelwurf kleiner oder gleich dem #neo.gls("ew"), so ist die Probe gelungen, andernfalls ist sie missglückt.])
 
 === #neo.gls-long("gfw")
-Der #neo.gls("gfw") ist die Basis für jede Probe im Spiel. Als erstes wird der #neo.gls-long("unm") berechnet.
+Der #neo.gls("gfw") ist die Basis für jede Probe im Spiel. Als erstes wird der #neo.gls-long("unm") im Bezug zum #neo.gls("fw") berechnet.
 
 #block(
   width: 100%,
@@ -38,6 +38,10 @@ Der #neo.gls("gfw") ist die Basis für jede Probe im Spiel. Als erstes wird der 
   stroke: 1pt + amber.at("600"),
   align(center + horizon, neo.formula.unm.f)
 )
+
+#v(1em)
+#description("Hinweis für Kampffertigkeiten: Bei Fertigkeiten wie Fernkampf oder Bewaffneter Nahkampf entspricht die Stufe in dieser Formel immer der Waffenstufe der aktuell geführten Waffe.")
+#v(1em)
 
 Sollte der #neo.gls("unm") unter 0 sinken, dann wird der Modifikator bei der Probe missachtet.
 
@@ -79,8 +83,10 @@ Die Modifikatoren beeinflussen direkt den #neo.gls("ew") einer Probe. Ein positi
 )
 
 === Kritischer Erfolg / Patzer
-Bei der Probe werden zwei Würfelerebnisse besonders hervor gehoben. ist das Ergebnis des Wurfes eine 2 dann ist die Probe geglückt, unabhängig von den eingesetzten Modifikatoren.
-Ist das Ergebnis des Wurfes jedoch eine 24 ist die Probe missglückt, unabhängig von den eingesetzten Modifikatoren. 
+
+Bei der Probe werden zwei Würfelerebnisse besonders hervor gehoben. ist das Ergebnis des Wurfes eine 2 (beide Würfel zeigen eine 1), selbst wenn der modifizierte Einsatzwert (EW) $<2$ ist.
+
+Ist das Ergebnis des Wurfes jedoch eine 24 (beide Würfel zeigen eine 12) ist die Probe missglückt, selbst wenn der modifizierte Einsatzwert (EW) $>24$ ist. 
 
 
 = Kampf
@@ -106,7 +112,7 @@ Ein Kampf folgt folgender Abwicklung.
 
 
 == Initiativprotokoll
-Die Inititative legt fest, wer den Kampf beginnt. Die jeweiligen Gruppen die sich im Kampf gegenüberstehen werden als Einheit gesehen und handeln auch gleichzeitig. Hierfür wird eine Vergleichende Probe der beiden Fraktionen mit 2W12 duchgeführt. Wer den niedrigeren Wert würfelt, beginnt den Kampf.
+Die Inititative legt fest, wer den Kampf beginnt. Die jeweiligen Fraktionen die sich im Kampf gegenüberstehen werden als Einheit gesehen und handeln gleichzeitig. Beide Fraktionen würfeln mit 2W12. Die Fraktion mit dem niedrigeren Würfelwurf erhält die Initiative und handelt zuerst.
 
 === Hinterhalt 
 Bei einem Hinterhalt erhält die initiierende Gruppe einen ersten Angriff. Erst nach Abschluss dieser Kampfrunde wird die Initiative für den Kampf ausgewürfelt. hierdurch kann es vorkommen, dass die Gruppe, die den Hinterhalt ausgeführt hat einen weiteren Angriff erhält.
@@ -362,13 +368,13 @@ Dabei werden die Erfolge wie folgt von der Lebensenergie abgezogen.
   fill: table-fill,
   [*Erfolge*],[*Effekt auf Vitalitätsschichten*],
   [1 -- 5], [#neo.gls-long("erm")],
-  [6 -- 10], [Basiswert + jede weitere *gerade Zahl* verursacht *Schaden*],
-  [11+], [Jede Einheit wird als *Schwerer Schaden* verbucht ],
+  [6 -- 10], [Die ersten 5 Erfolge reduzieren die körperliche Ermüdung (ERM). Jeder weitere Erfolg (ab dem 6.) verursacht 1 Punkt Schaden (SCH).],
+  [11+], [Ab dem 11. Erfolg wird jeder weitere Erfolg als 1 Punkt Schwerer Schaden eingetragen.],
   [15+], [*Terminale Vernichtung* des Primärziels]
 )
 
 === Die Schwelle des Überlebenswillens
-Sobald die fünfte Markierung des Schweren Schadens gesetzt ist, fällt der Charakter in eine tödliche Bewusstlosigkeit. In dieser Situation entscheidet der Überlebenswille über Leben und Tod.
+Sobald die fünfte Markierung des Traumaschadens gesetzt ist, fällt der Charakter in eine tödliche Bewusstlosigkeit. In dieser Situation entscheidet der Überlebenswille über Leben und Tod.
 
 ==== Der Überlebensintervall
 Zu Beginn jeder Kampfrunde ist eine #neo.gls-long("stabi") erforderlich um sicherzustellen, dass der Charakter weiterhin am Leben bleibt.
@@ -449,8 +455,21 @@ Die Dauer der Rast und das jeweilige Basisattribut bestimmen die Höhe der Regen
 #action([Mittlere Rast (ca. 4 Stunden):], [Regeneriert Erschöpfung/Ermüdung in Höhe des zweifachen Attributswertes (2x Attribut).])
 #action([Lange Rast (ab 6 Stunden):], [Regeneriert Erschöpfung/Ermüdung in Höhe des dreifachen Attributswertes (was bei durchschnittlichen Attributen einer vollständigen Erholung entspricht)])
 
+=== Schadenskonvertierung
+
 Natürliche Heilung von Verletzungen (Schaden & Trauma) Echte Wunden erfordern Zeit und heilen unabhängig von der Rast in einem festen Tagesrhythmus: 
-#action([Schaden(Stufe II):], [Sobald 10 Plätze in der #neo.gls-short("erm") frei sind, wird ein Schaden sofort in #neo.gls-short("erm") umgewandelt. Durch diesen Mechanik können max. 2 Schaden am Tag regeneriert werden.]) 
+
+#table(
+  columns: (1fr, 2fr),
+  align: (left, left),
+  stroke: table-stroke,
+  fill: table-fill,
+  [*Art*],[*Effekt auf Vitalitätsschichten*],
+  [Schaden], [1 Punkt Schaden wird in 10 Punkte #neo.gls("erm") umgewandelt],
+  [Trauma], [1 Punkt Traumaschaden wird in 5 Schadenspunkte umgewandelt],
+)
+
+#action([Schaden(Stufe II):], [Sobald 10 Plätze in der #neo.gls-short("erm") frei sind, wird ein Schaden automatisch in #neo.gls-short("erm") umgewandelt. Durch diesen Mechanik können max. 2 Schaden am Tag regeneriert werden.]) 
 
 #action([Trauma (Stufe III):], [Sobald im Schaden 5 Plätze frei sind, wird ein Traumaschaden automatisch in 5 Schadenspunkte umgewandelt.])
 
