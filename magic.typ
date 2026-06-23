@@ -379,4 +379,20 @@ Die Resonanz Dauer erhöht nicht den anfänglichen Schadensausstoß, sondern bes
 - *Neuer Schadenswurf:* Zu Beginn jeder Kampfrunde erleidet das Ziel automatisch den Schaden der Manifestation. Hierfür wird lediglich der Schadenspool (die ermittelte Anzahl an W6) für diese spezifische Formel komplett neu ausgewürfelt.
 - *Verrechnung:* Der Rüstungsschutz (RS) und etwaige Resistenzen des Ziels werden in jeder Runde aufs Neue von den frischen Erfolgen abgezogen, bevor der verbleibende Schaden mit der Lebensenergie verrechnet wird.
 
-== Steigern der Kristallstufe oder wie das jetzt auch heißen mag.
+
+
+
+=== Steigerung der Arkanen Stufe
+
+Die Arkane Stufe (AS) zeigt, wie tief ein Magiewirker in seine arkane Kraft eingetaucht ist. Sie wirkt als Bonus auf alle Formeln der erlernten Domänen, ist an keine Charakterstufe oder ein bestimmtes Attribut gebunden und lässt sich durch EP-Investitionen beliebig weit ausbauen.
+
+Gesteigert wird die AS wie eine normale Fertigkeit, allerdings mit deutlich höheren EP-Kosten. Da sie nicht nur eine einzelne Disziplin verbessert, sondern das gesamte magische Fundament, gilt eine feste Trainingsstufe von 10. Die EP-Kosten für den nächsten Stufenaufstieg berechnen sich nach folgender Formel:
+
+#block(
+  width: 100%,
+  height: 60pt,
+  stroke: 1pt + amber.at("600"),
+  align(center + horizon, neo.formula.ks.f)
+)
+
+Jede neue AS-Stufe bringt drei Verbesserungen mit sich. Der Arkane Gesamtwert (AGW) steigt um 1 Punkt, Formeln lassen sich um eine Einfache Handlung schneller wirken, mindestens eine bleibt aber immer nötig, und ein höherer AGW federt negative Modifikatoren durch hohe Resonanzen besser ab.

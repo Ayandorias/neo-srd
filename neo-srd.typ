@@ -147,7 +147,7 @@
   set outline.entry(fill: none)
   v(5em)
   align(center, text(size: 20pt, font: "Controwell", "Inhaltsverzeichnis"))
-  columns(2, gutter: 30pt)[
+  columns(3, gutter: 5pt)[
     #outline(title: none, depth: 3)
   ]
 }

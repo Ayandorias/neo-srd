@@ -1,61 +1,8 @@
+#import "@local/neo-core:0.1.0" as neo
+
+#import "components.typ": *
+
 == Tiere
-=== Adler
-=== Affe
-=== Bär
-=== Biber
-=== Biene
-=== Blauwal
-=== Chamäleon
-=== Delfin
-=== Eichhörnchen
-=== Eisbär
-=== Elefant
-=== Ente
-=== Eule
-=== Falke
-=== Fledermaus
-=== Frosch
-=== Fuchs
-=== Gans
-=== Gepard
-=== Giraffe
-=== Hai
-=== Hase
-=== Hirsch
-=== Hund
-=== Igel
-=== Jaguar
-=== Kamel
-=== Känguru
-=== Katze
-=== Krake
-=== Krokodil
-=== Kuh
-=== Leopard
-=== Löwe
-=== Luchs
-=== Maus
-=== Möwe
-=== Nashorn
-=== Nilpferd
-=== Oktopus
-=== Panther
-=== Papagei
-=== Pelikan
-=== Pferd
-=== Pinguin
-=== Qualle
-=== Rabe
-=== Reh
-=== Robbe
-=== Schaf
-=== Schildkröte
-=== Schmetterling
-=== Schwan
-=== Schwein
-=== Seepferdchen
-=== Taube
-=== Tiger
-=== Waschbär
-=== Wolf
-=== Zebra
+#for key in neo.npcs_animals.keys() {
+  render-npc(neo.npcs_animals.at(key))
+}
