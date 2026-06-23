@@ -26,5 +26,6 @@
 #let section-color = gray.at("800")
 
 
-#let table-stroke = (0.5pt + gray.at("400"))
 #let table-fill = ((x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white })
+#let table-fill-headerless = ((x, y) => if calc.even(y) { gray.at("100") } else { white })
+#let table-stroke = (0.5pt + gray.at("400"))

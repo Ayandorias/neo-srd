@@ -5,29 +5,18 @@
 #import "components.typ": *
 
 
+= Ablauf einer arkanen Formel
+Das Wirken arkaner Formeln folgt einem festen Ablauf. Um eine Formel zu weben, werden die folgenden Schritte in der angegebenen Reihenfolge durchlaufen:
 
-= Baukasten für Magie & Fähigkeiten
-
-
-
-
-
-== Angriff ausführen
-Ein Angriff wird durch das individuelle Können und die äußeren Umstände bestimmt.
-Um einen Angriff auszuführen, werden folgende Schritte ausgeführt:
-
-#action("1. Fokus auswählen", [])
-
-#action("2. Manifestation festlegen", [])
-
-#action("3. Resonanz festlegen", [])
-
-#action("4. Einsatzwert berechnen", [])
-
-#action("5. Arkane Kosten berechnen", [])
-
-
-
+#action("Fokus auswählen:", "Es wird die Domäne und der spezifische Fokus bestimmt, der die grundlegende Wirkung der Formel vorgibt.")
+#v(0.5em)
+#action("Manifestation festlegen:", "Die geometrische Form der Entladung wird gewählt. Dies definiert die Basis-Komplexität und die benötigte Zauberdauer.")
+#v(0.5em)
+#action("Resonanz festlegen:", "Die Formel wird durch Modifikatoren wie Dauer, Intensität oder Reichweite an die Situation angepasst.")
+#v(0.5em)
+#action("Einsatzwert berechnen:", "Aus dem Arkanen Gesamtwert und den Abzügen durch Komplexität ergibt sich der finale Zielwert für die vergleichende Probe.")
+#v(0.5em)
+#action("Arkane Kosten berechnen:", "Die investierte Zeit und geistige Anstrengung wird in Geistige Ermüdung umgerechnet und vom Pool des Wirkenden abgezogen.")
 
 
 == Domäne der Elemente
@@ -90,7 +79,7 @@ Das Bündeln enormer Luftmengen erzeugt einen physikalischen Nebeneffekt: Für e
 === Telekinese
 // #action("Basisattribut:", "WIL")
 
-#description("Telekinese definiert sich als die Bewegung von Objekten und die Ausübung von physischem Druck durch reinen Willensdruck. Ein Telekinet erschafft keine neuen Elemente, sondern manipuлит die reine kinetische Kraft, um vorhandene Materie als Werkzeug, Waffe oder Barriere zu nutzen.")
+#description("Telekinese definiert sich als die Bewegung von Objekten und die Ausübung von physischem Druck durch reinen Willensdruck. Ein Telekinet erschafft keine neuen Elemente, sondern manipuliert die reine kinetische Kraft, um vorhandene Materie als Werkzeug, Waffe oder Barriere zu nutzen.")
 
 *Wirkung der Intensität* \
 Die Intensität skaliert den kinetischen Druck der Formel:
@@ -239,7 +228,7 @@ Die Intensität skaliert die Tiefe der Verbindung und den Grad der Einflussnahme
 === Dimensionale Magie
 // #action("Basisattribut:", "WIL")
 
-#description("Dimensionale Magie ermöglicht die direkte Manipulation von Raum und Zeit sowie die Öffnung von Portalen im geometrischen Gefüge der Realität. Da diese Magie die kosmische Ordnung verzerrt, erfordert sie ein makelloses arkantes Verständnis.")
+#description("Dimensionale Magie ermöglicht die direkte Manipulation von Raum und Zeit sowie die Öffnung von Portalen im geometrischen Gefüge der Realität. Da diese Magie die kosmische Ordnung verzerrt, erfordert sie ein makelloses arkanes Verständnis.")
 
 *Wirkung der Intensität* \
 Die Intensität bestimmt die Stabilität und das Ausmaß der Raumkrümmung:
@@ -279,7 +268,7 @@ Die Intensität definiert die Härte, Dichte und Widerstandskraft der erzeugten 
 #render_resonanzen(neo.resonanzen)
 
 == Einsatzwert berechnen
-Um den Einsatzwert für die Arkane Formel zu errechnen, wird zuerst der #neo.gls("agw") berechnet.
+Um den Einsatzwert für die Arkane Formel zu errechnen, wird zuerst der #neo.gls("agw") berechnet in abhängigkeit vom einzusetztenden #neo.gls("attr").
 #block(
   width: 100%,
   height: 60pt,
@@ -287,7 +276,7 @@ Um den Einsatzwert für die Arkane Formel zu errechnen, wird zuerst der #neo.gls
   align(center + horizon, neo.formula.agw.f)
 )
 
-Anschließend wird der Unerfahrenheits-Malus berechnet.
+Anschließend wird der Unerfahrenheits-Malus in Abhängigkeit zum #neo.gls("fw") berechnet.
 
 #block(
   width: 100%,
@@ -389,3 +378,5 @@ Die Resonanz Dauer erhöht nicht den anfänglichen Schadensausstoß, sondern bes
 - *Keine neue Trefferprobe:* In den Folgerunden ist keine erneute Probe erforderlich, da dies bereits geschehen ist.
 - *Neuer Schadenswurf:* Zu Beginn jeder Kampfrunde erleidet das Ziel automatisch den Schaden der Manifestation. Hierfür wird lediglich der Schadenspool (die ermittelte Anzahl an W6) für diese spezifische Formel komplett neu ausgewürfelt.
 - *Verrechnung:* Der Rüstungsschutz (RS) und etwaige Resistenzen des Ziels werden in jeder Runde aufs Neue von den frischen Erfolgen abgezogen, bevor der verbleibende Schaden mit der Lebensenergie verrechnet wird.
+
+== Steigern der Kristallstufe oder wie das jetzt auch heißen mag.

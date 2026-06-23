@@ -3,7 +3,7 @@
 
 
 = Eigenschaften
-Um einen Cahrakter zu individualisieren, stehen eine Anzahl von Positiven und Negativen Eigenschaften zur Verfügung.
+Um einen Charakter zu individualisieren, stehen eine Anzahl von Positiven und Negativen Eigenschaften zur Verfügung.
 
 == Positive Eigenschaften
 #for trait in neo.traits.pos [

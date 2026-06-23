@@ -6,14 +6,14 @@
 = Kernmechanik
 
 == Das 2W12-System
-Um das gelingen einer Aktion zu prüfen werden zwei zwölfseitige Würfel (2W12) geworfen. Durch die Normalverteilung bei zwei Würfeln liegt die Wahrscheinlichkeit von mittleren Ergebnissen höher als niedrige bzw. hohe Würfelwürfe.
-Diese Art von Würfen werden bei Proben auf die Fertigkeiten, beim Kampf oder beim weben von Arkanen Formeln eingesetzt.
+Um das Gelingen einer Aktion zu prüfen werden zwei zwölfseitige Würfel (2W12) geworfen. Durch die Normalverteilung bei zwei Würfeln liegt die Wahrscheinlichkeit von mittleren Ergebnissen höher als niedrige bzw. hohe Würfelwürfe.
+Diese Art von Würfen werden bei Proben auf die Fertigkeiten, beim Kampf oder beim Weben von Arkanen Formeln eingesetzt.
 
 === Vergleichende Probe
 Eine vergleichende Probe dient der Feststellung eines Erfolgs. Das Gesamtergebnis des Wurfs wird mit dem #neo.gls("ew") verglichen. Hierfür werden folgende Schritte durchlaufen.
 
 
-#action([1. #neo.gls("gfw") ermitteln],[Zuers wird der #neo.gls("gfw") ermittelt. Dieser besteht aus #neo.gls("ba") und #neo.gls("fw")])
+#action([1. #neo.gls("gfw") ermitteln],[Zuerst wird der #neo.gls("gfw") ermittelt. Dieser besteht aus #neo.gls("ba") und #neo.gls("fw")])
 
 #action([2.  #neo.gls-long("ew") berechnen],[Anwendung verschiedener Modifikatoren])
 
@@ -57,7 +57,7 @@ Anschließend wird der #neo.gls("gfw") mittels des #neo.gls-short("unm") ermitte
 
 
 === #neo.gls-long("ew") berechnen
-Um den #neo.gls-long("ew") (#neo.gls-short("ew"))zu berechnen werden die notwendigen Mdoifikatoren auf den #neo.gls("gfw") angewendet.
+Um den #neo.gls-long("ew") (#neo.gls-short("ew"))zu berechnen werden die notwendigen Modifikatoren auf den #neo.gls("gfw") angewendet.
 Folgende Modifikatoren können auf den #neo.gls("gfw") angewendet werden.
 
 #text(size: 11pt, weight: "bold", "Allgemeine Modifikatoren")
@@ -84,16 +84,16 @@ Die Modifikatoren beeinflussen direkt den #neo.gls("ew") einer Probe. Ein positi
 
 === Kritischer Erfolg / Patzer
 
-Bei der Probe werden zwei Würfelerebnisse besonders hervor gehoben. ist das Ergebnis des Wurfes eine 2 (beide Würfel zeigen eine 1), selbst wenn der modifizierte Einsatzwert (EW) $<2$ ist.
+Bei der Probe werden zwei Würfelergebnisse besonders hervor gehoben. ist das Ergebnis des Wurfes eine 2 (beide Würfel zeigen eine 1), selbst wenn der modifizierte Einsatzwert (EW) $<2$ ist.
 
 Ist das Ergebnis des Wurfes jedoch eine 24 (beide Würfel zeigen eine 12) ist die Probe missglückt, selbst wenn der modifizierte Einsatzwert (EW) $>24$ ist. 
 
 
 = Kampf
-Beim erkunden der Welt begegnen den Charakteren Kreaturen und Personen die nicht immer Freundlich gesinnt sind. In solchen Situationen entscheidet ein Kampf über das weiterkommen der Charaktere.
+Beim Erkunden der Welt begegnen den Charakteren Kreaturen und Personen die nicht immer freundlich gesinnt sind. In solchen Situationen entscheidet ein Kampf über das Weiterkommen der Charaktere.
 
 == Die Abwicklung
-Wenn zwei Parteien sich zum Kampf gegeüberstehen benötigt man ein System wleches das Chaos aus dem ganzen nimmt. Das Kampfsystem wird in Kampfrunden zu je sechs Sekunden unterteilt. In dieser Zeit hat jeder Charakter die Möglichkeiten zu agieren. In welcher Reihenfolge welcher Charakter zu welcher Zeit agiert wird die Initiative festgelegt. Im Spiel agieren immer all eCharaktere einer Fraktion gleichzeitig. 
+Wenn zwei Parteien sich zum Kampf gegeüberstehen benötigt man ein System welches das Chaos aus dem ganzen nimmt. Das Kampfsystem wird in Kampfrunden zu je sechs Sekunden unterteilt. In dieser Zeit hat jeder Charakter die Möglichkeiten zu agieren. In welcher Reihenfolge welcher Charakter zu welcher Zeit agiert wird die Initiative festgelegt. Im Spiel agieren immer alle Charaktere einer Fraktion gleichzeitig. 
 Erst wenn alle Spieler Ihren Zug gemacht haben beginnt die nächste Kampfrunde oder beendet den Kampf.
 
 Ein Kampf folgt folgender Abwicklung.
@@ -106,7 +106,7 @@ Ein Kampf folgt folgender Abwicklung.
 //   #action("1.1. Der Überfall", [Der Überfall ist eine Besonderheit des Kampfes. Hier hat die angreifende Fraktion einen ersten Angriff. Erst nachdem dieser ausgeführt wurde, wird die Gruppeninitiative für den regulären Kampf festgelegt.])
 // ]
 
-#action("2. Kampfhandlung", [Nachdem die Initiative ermittelt wurde führt die Gruppe die an der Reihe ist ihre Kampfhandlng aus. ])
+#action("2. Kampfhandlung", [Nachdem die Initiative ermittelt wurde führt die Gruppe die an der Reihe ist ihre Kampfhandlung aus. ])
 
 #action("3. Schadensregulierung", [Nachdem alle Kampfrunden durchgeführt sind, wird der Schaden für diese Kampfrunde ermittelt.])
 
@@ -120,7 +120,7 @@ Bei einem Hinterhalt erhält die initiierende Gruppe einen ersten Angriff. Erst 
 
 == Kampfhandlung
 Jeder Charakter ist bei seinen Handlung und der Zeit limitiert. Die
-Koordination der Bewegungungen und Aktion wird bei jeder Runde neu ermittelt.
+Koordination der Bewegungen und Aktion wird bei jeder Runde neu ermittelt.
 
 === Aktionsauswahl
 
@@ -138,7 +138,7 @@ Die Belegung erfolgt durch eine #neo.gls("nhdlg") (beansprucht zwei Segmente) un
 Eine einzige #neo.gls("khdlg") belegt sämtliche Segmente und beansprucht somit die volle Dauer der Phase für eine einzige, hochkonzentrierte Durchführung.
 
 ==== Mehrphasige Aktionen
-Bestimmt Handlungen, besonders das Webenvon Zaubern, oder das betreiben von großen Maschinen erfordert häufig mehrere Kampfrunden bis diese ausgelöst werden können. Diese anzahl an komplexen Handlungen führt daszu, dass der Cahrakter über mehrere Kampfphasen nicht aktiv am Kampfgeschehen teilnehmen kann. 
+Bestimmt Handlungen, besonders das Webenvon Zaubern, oder das betreiben von großen Maschinen erfordert häufig mehrere Kampfrunden bis diese ausgelöst werden können. Diese anzahl an komplexen Handlungen führt dazu, dass der Charakter über mehrere Kampfphasen nicht aktiv am Kampfgeschehen teilnehmen kann. 
 
 #action("Unterbrechung:", [Wird ein Charakter während einer mehrphasigen Handlung durch äußere Einwirkung (z.B. schwerer Schaden oder Betäubung) neutralisiert oder zur Bewegung gezwungen, gilt die Handlung als
 gescheitert. Die investierte Energie oder das Material ist
@@ -197,7 +197,7 @@ Das Gewicht, welches ein Charakter bei sich trägt, hat einfluss auf seine #neo.
 )
 
 ==== Geländebeschaffenheit
-Das Gelände auf welchem sich der Kampf befindet hat einfluss auf die #neo.gls("bwr") der einzelnen Cahraktere. Der Spielleiter gibt an, welche Geländeart gerade vorrangig ist.
+Das Gelände auf welchem sich der Kampf befindet hat einfluss auf die #neo.gls("bwr") der einzelnen Charaktere. Der Spielleiter gibt an, welche Geländeart gerade vorrangig ist.
 
 #table(
   columns: (1fr, 1fr),
@@ -208,21 +208,21 @@ Das Gelände auf welchem sich der Kampf befindet hat einfluss auf die #neo.gls("
   ..neo.terrain
 )
 
-Die #neo.gls("bwr") wird nacheinander berechnet. Zuerst wird die #neo.gls("bwr"), der einzelnen Cahraktere Berechnet. Anshließend fließt das Gelänge in die Berechnung mit ein.
+Die #neo.gls("bwr") wird nacheinander berechnet. Zuerst wird die #neo.gls("bwr"), der einzelnen Charaktere Berechnet. Anshließend fließt das Gelände in die Berechnung mit ein.
 
 == Angriff ausführen
 Ein Angriff wird durch das individuelle Können und die äußeren Umstände bestimmt.
 Um einen Angriff auszuführen, werden folgende Schritte ausgeführt:
 
-#action("1. Ziehlauswahl", [Als erstes wird ein Ziel ausgewählt, welches angegriffen werden kann. hierbei spielt die Reichweite die entscheidene Rolle.])
+#action("1. Zielauswahl", [Als erstes wird ein Ziel ausgewählt, welches angegriffen werden kann. hierbei spielt die Reichweite die entscheidene Rolle.])
 
-#action("2." + neo.gls("ew") + "berechnen", [Nun werden die Modifikatoren festgelegt. (Geziehlter Angriff, Sichtverhältnisse etc) Hieraus ergibt sich der #neo.gls("ew") für die vergleichende Probe.])
+#action("2." + neo.gls("ew") + "berechnen", [Nun werden die Modifikatoren festgelegt. (Gezielter Angriff, Sichtverhältnisse etc) Hieraus ergibt sich der #neo.gls("ew") für die vergleichende Probe.])
 
 #action("3. Angriff ausführen", [Zuletzt wird der Angriff ausgeführ und die vergleichende Probe ermittelt, ob der Angriff erfolgreich ist oder nicht.])
 
 #action("4. Schadensermittlung", [Nach erfolgreichem Angriff, wird der zugefügte Schaden ermittelt.])
 
-=== Ziehlauswahl
+=== Zielauswahl
 Um einen Gegner angreifen zu können muss dieser sich innerhlab der Reichweite der aktuellen Waffe des Charakters befinden. Je nach eingesetzter Waffe varieiert hier die Reichweite für den Angriff.
 
 === #neo.gls-long("ew") berechnen
@@ -284,7 +284,7 @@ Für die Trefferzone werden folgende Modifikatoren angewendet.
 )
 
 === Fernkampfwaffe
-Der #neo.gls("ew") wird genauso berechnet, wie er auch beim Nahkamof berechnet wird. Es kann zusätzlich ein weiterer Modifikator hinzugezogen werden, der die Reichweite zum Ziel mit einbezieht.
+Der #neo.gls("ew") wird genauso berechnet, wie er auch beim Nahkampf berechnet wird. Es kann zusätzlich ein weiterer Modifikator hinzugezogen werden, der die Reichweite zum Ziel mit einbezieht.
 
 #table(
   columns: (auto, 1fr, 65pt),
@@ -339,8 +339,6 @@ Bei Fernkampfwaffen die ein Projektil verschießen, kann die Stufe der Munition 
   fill: table-fill,
   ..neo.munition_type
 )
-
-==== Eskalationskaskade
 
 ==== Erfolgswürfel und Eskalationskaskade
 Die ermittelten W6 bestimmt die anzahl an Würfel die für die Schadensermittlung genutzt werden. 

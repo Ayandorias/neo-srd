@@ -67,10 +67,10 @@ Diese werden in Körperliche Attribute und geistige Attribute unterteilt.
 Jedes Attribut beginnt mit einem Basiswert von 6. Es können weitere 28 Punkte auf die sieben Attribute aufgeteilt werden. Dabei muss beachtet werden, dass kein Attribut über den Wert von 12 gesteigert wird.
 
 == Vor- und Nachteile
-Um den Charakter zu individualisieren können Vor- und Nachteile eingesetzt werden. Hierbei gild, dass für jede eingesetzte Stufe bei den Vorteilen zwei Stufen bei den Nachteilen eingesetzt werden müssen.
+Um den Charakter zu individualisieren können Vor- und Nachteile eingesetzt werden. Hierbei t, dass für jede eingesetzte Stufe bei den Vorteilen zwei Stufen bei den Nachteilen eingesetzt werden müssen.
 
 ==== Einschränkung
-Jedem Charakter kann max. 9 Stufen an Vorteilen haben. Dafür müssen dann aber Nachteile in einer Gesamthöhe von 18 Stufen ausgewählt werden.
+Jeder Charakter kann max. 9 Stufen an Vorteilen haben. Dafür müssen dann aber Nachteile in einer Gesamthöhe von 18 Stufen ausgewählt werden.
 
 ==== Erzeugen
 Vor- und Nachteile können während des Charakterlebens hinzugefügt werden. Diese werden entweder durch den Spielleiter vergeben oder in Rücksprache mit diesem getroffen.
@@ -82,7 +82,7 @@ Vor- und Nachteile können während des Charakterlebens hinzugefügt werden. Die
 Die #neo.gls-short("ks") gibt an, welchee Potenzial der Charakter besitzt. Jeder magiebegabte Charakter hat zu beginn der Charaktergenerierung eine #neo.gls-short("ks") von 1.
 
 === #neo.gls-long("bwr") (#neo.gls-short("bwr"))
-Um sicherzustellen ,dass sich ein Cahrakter in einem bestimmten Rahmen bewegt wird für jeden Charakter der Bewegungsradius berechnet. 
+Um sicherzustellen ,dass sich ein Charakter in einem bestimmten Rahmen bewegt wird für jeden Charakter der Bewegungsradius berechnet. 
 Der Quotient der Formel:
 
 #block(
@@ -149,9 +149,9 @@ Die geistige Stabilität und die Nachteile eines Charakters beeinflussen sich ge
 
 Bei der Charaktergenerierung können Nachteile Einfluss auf die Geistige Stabilität haben. 
 
-Wird im Verlauf des Cahrakterlebens die geistige Stabilität beeinträchtigt, kann der Spielleiter dem Charakter einen passenden Nachteil zuweisen.
+Wird im Verlauf des Charakterlebens die geistige Stabilität beeinträchtigt, kann der Spielleiter dem Charakter einen passenden Nachteil zuweisen.
 
-=== Geistige Regneration
+=== Geistige Regeneration
 Der Verlust von geistiger Stabilität kann geheilt werden. Wenn sich der Charakter mental erholt, kann der Spielleiter die Regeneration erlauben. 
 
 
@@ -203,21 +203,21 @@ Nachdem die Fertigkeiten ausgewählt wurden, kann der Charakter individualisiert
   align(center + horizon, neo.formula.fp.f)
 )
 
-zur Vefügung die frei auf die Fertigkeiten aufgeteilt werden können. Das einzige Limit liegt bei einem max. #neo.gls-short("fw") von 4.
+zur Verfügung die frei auf die Fertigkeiten aufgeteilt werden können. Das einzige Limit liegt bei einem max. #neo.gls-short("fw") von 4.
 
 == Erfahrene Charaktere
 
 Falls gewünscht kann der Einstig auch mit einem Erfahreneren Charakter gestartet werden. Hierfür vergibt der Spielleiter zu Beginn eine Gewisse Anzahl an Fertigkeitspunkten, die auf die Fertigkeiten aufgeteilt werden können. Hierfür wird die ganz normale Steigerung durchgeführt.
 
 #table(
-  columns: (auto, 1fr),
+  columns: (auto, auto, 1fr),
   stroke: table-stroke,
   fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
-  align: (center + horizon, left),
+  align: (center + horizon, center + horizon, left),
   ..neo.level-desc
 )
 
-Anschließend sucht der Spielleiter sich die nötigen AP aus der folgenden Tabelle.
+Anschließend sucht der Spielleiter sich die nötigen#neo.gls("ep") aus der folgenden Tabelle.
 
 #text(size: 12pt, weight: "bold", "Allgemeine Modifikatoren")
 #v(-6pt)

@@ -1,6 +1,7 @@
 #import "@local/neo-core:0.1.0" as neo
 
-#import "components.typ": *
+// #import "components.typ": *
+#import "color-theme.typ": *
 
 = Waffen
 

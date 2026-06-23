@@ -26,7 +26,7 @@
 
 #v(1em)
 
-#text(font: "Controwell", size: 20pt, weight: "bold", fill: gray.at("700"))[AuthoR]
+#text(font: "Controwell", size: 20pt, weight: "bold", fill: gray.at("700"))[Author]
 #v(0.75fr)
 Bruno Pierucki
 

@@ -35,7 +35,7 @@
     #render_skill(technik)
 ]
 
-== Üerlebensfertigkeiten
+== Überlebensfertigkeiten
 #for survival in neo.skills.survival [
     #render_skill(survival)
 ]
