@@ -382,7 +382,18 @@ font_size: 12pt) = {
       [#neo.gls("inu")], align(center)[#attr-val(0, "attr_inu")], align(center)[#attr-val(1, "attr_inu")], align(center)[#attr-val(2, "attr_inu")],
       [#neo.gls("ers")], align(center)[#attr-val(0, "attr_ers")], align(center)[#attr-val(1, "attr_ers")], align(center)[#attr-val(2, "attr_ers")],
       [#neo.gls("wil")], align(center)[#attr-val(0, "attr_wil")], align(center)[#attr-val(1, "attr_wil")], align(center)[#attr-val(2, "attr_wil")],
-      [#neo.gls-short("ks")], align(center)[#attr-val(0, "ks")], align(center)[#attr-val(1, "ks")], align(center)[#attr-val(2, "ks")],
+
+      ..if "ks" in npc { 
+        ([#neo.gls-short("ks")], 
+        align(center)[#attr-val(0, "ks")], 
+        align(center)[#attr-val(1, "ks")], 
+        align(center)[#attr-val(2, "ks")], )
+      } else {
+        ([],[],[],[],)
+      },
+        //[#neo.gls-short("ks")], align(center)[#attr-val(0, "ks")], align(center)[#attr-val(1, "ks")], align(center)[#attr-val(2, "ks")],
+      
+
       [#neo.gls-short("bwr")], align(center)[#calc.floor((npc.attr_mus.at(0) + npc.attr_ges.at(0)) / 4)], align(center)[#calc.floor((npc.attr_mus.at(1) + npc.attr_ges.at(1)) / 4)], align(center)[#calc.floor((npc.attr_mus.at(2) + npc.attr_ges.at(2)) / 4)],
     )
 
@@ -397,9 +408,11 @@ font_size: 12pt) = {
     )
   ]
 
-  action("Domäne", [#npc.magic_domain / #npc.magic_domain / #npc.magic_domain])
-  action("Fokusse", "")
-  magic-content() 
+  if "magic_domain" in npc [
+    #action("Domäne", [#npc.magic_domain / #npc.magic_domain / #npc.magic_domain])
+    #action("Fokusse", "")
+    #magic-content() 
+  ]
 
   action("Mundane Skills", "")
   skills-content()

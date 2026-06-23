@@ -1,1 +1,1 @@
-#let app_version = "0.4.4"
+#let app_version = "0.5.1"

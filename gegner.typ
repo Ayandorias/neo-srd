@@ -8,28 +8,9 @@ Magiebegabte NSCs skalieren ihre Werte und Fähigkeiten mit der Arkanen Stufe (K
 #for key in neo.npcs.keys() {
   render-npc(neo.npcs.at(key))
 }
-=== Dimensions-Weber
-=== Elementarist
-=== Heiler
-=== Illusionist
-=== Kultist
-=== Mentalist
-=== Natur-Mystiker
-=== Seher
 
 == Nicht magiebegabte Gegner
-=== Attentäter
-=== Bandit
-=== Bogenschütze
-=== Bürger
-=== Dieb
-=== Gladiator
-=== Kopfgeldjäger
-=== Pirat
-=== Ritter
-=== Schläger
-=== Schmuggler
-=== Soldat
-=== Söldner
-=== Wache
-=== Wilderer
+#for key in neo.npcs_non_magic.keys() {
+  render-npc(neo.npcs_non_magic.at(key))
+}
+
