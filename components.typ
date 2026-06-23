@@ -417,8 +417,10 @@ font_size: 12pt) = {
   action("Mundane Skills", "")
   skills-content()
 
-  action("Waffen", "")
-  weapons-content()
+  if "weapons" in npc [
+    #action("Waffen", "")
+    #weapons-content()
+  ]
   action("Kampfdoktrin", "")
   npc.tactic.at(0) 
   v(0.1em)

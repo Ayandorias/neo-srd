@@ -475,7 +475,7 @@ Natürliche Heilung von Verletzungen (Schaden & Trauma) Echte Wunden erfordern Z
 Die Panzerung eiones Charakters wird über die Rüstungsstufe (RS) definiert. Diese absorbiert Schaden in Höhe ihrer Stufe.
 
 ==== Tilgungsprotokoll
-Der RS wird unmittelbar von der Gesamtzahl der Erfolge abgezogen. Schadenspunkte die kleiner der Rüstungsstufe sind, gelten als Wirkungslos
+Der RS wird unmittelbar von der Gesamtzahl der Erfolge abgezogen. Verbleibende Erfolge werden als Schaden gewertet.
 
 ==== Zonenbasierter Schutz
 Die Panzerung ist abhöngig von der getroffenen Stelle des Körpers. Jede Körperzone (Torso, Extremitäten) verfügen über eine eingenständige RS.

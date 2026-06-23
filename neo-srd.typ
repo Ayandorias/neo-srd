@@ -171,7 +171,8 @@
 #include "weapons.typ"
 
 #columns(2, ..srd.columns-gutter)[
-== Alchemistische Substanzen & Toxine
+// == Alchemistische Substanzen & Toxine
+// TODO: Kapitel mit Leben füllen.
 
 = NSC's
 #include "gegner.typ"
@@ -180,10 +181,6 @@
 #include "skills.typ"
 
 
-
-== Matrix für Befähigungen
-== Universelle Referenzbeispiele
-== Richtlinien zur Erstellung
 // ]
 
 // -- Begin Abkürzungsverzeichnis
