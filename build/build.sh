@@ -9,4 +9,4 @@ VERSION=$(git describe --tags --abbrev=0 2>/dev/null || echo "v0.0.0")
 echo "#let app_version = \"$VERSION\"" > version.typ
 
 # Starte die eigentliche Kompilierung
-typst compile neo-srd.typ generated/srd_export.pdf
+typst compile neo-srd.typ generated/neo-srd.pdf

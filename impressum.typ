@@ -17,28 +17,28 @@
 
 #v(1em)
 
-#text(font: "Controwell", size: 14pt, weight: "bold", fill: gray.at("700"))[Version:] #app_version \
+#text(font: "Controwell", size: 14pt, weight: "bold", fill: secondary.at("700"))[Version:] #app_version \
 
 #v(10fr)
 
-#text(font: "Controwell", size: 24pt, weight: "bold", fill: gray.at("700"))[Impressum]
+#text(font: "Controwell", size: 24pt, weight: "bold", fill: secondary.at("700"))[Impressum]
 // #text(size: 16pt, weight: "bold")[IMPRESSUM]
 
 #v(1em)
 
-#text(font: "Controwell", size: 20pt, weight: "bold", fill: gray.at("700"))[Author]
+#text(font: "Controwell", size: 20pt, weight: "bold", fill: secondary.at("700"))[Author]
 #v(0.75fr)
 Bruno Pierucki
 
 #v(1em) 
 
-#text(font: "Controwell", size: 24pt, weight: "bold", fill: gray.at("700"))[Satz und Layout]
+#text(font: "Controwell", size: 24pt, weight: "bold", fill: secondary.at("700"))[Satz und Layout]
 #v(0.75fr)
 Bruno Pierucki
 
 #v(1em)
 
-#text(font: "Controwell", size: 24pt, weight: "bold", fill: gray.at("700"))[Lizenz]
+#text(font: "Controwell", size: 24pt, weight: "bold", fill: secondary.at("700"))[Lizenz]
 
 #set align(left)
 #set par(justify: true)
@@ -57,7 +57,7 @@ Die Inhalte dieses Dokuments dürfen auf jede nach CC-BY-4.0 gestattete Weise ve
 #image("/bilder/by.svg", width: 25%) 
 
 // #v(0.8em)
-// #text(font: "Controwell", size: 14pt, weight: "bold", fill: gray.at("700"))[Erscheinungsdatum:] #datetime.today().display("[day]. [month repr:short] [year]")
+// #text(font: "Controwell", size: 14pt, weight: "bold", fill: secondary.at("700"))[Erscheinungsdatum:] #datetime.today().display("[day]. [month repr:short] [year]")
 
 #v(1em)
 

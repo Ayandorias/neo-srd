@@ -43,7 +43,7 @@
   set page(
     footer: context {
       let page_num = here().page()
-      line(length: 100%, stroke: 1pt + gray.at("400"))
+      line(length: 100%, stroke: 1pt + secondary.at("400"))
       if calc.even(page_num) {
         // Gerade Seite: Links (außen) die Seitenzahl, rechts (innen) der Name
         grid(

@@ -35,7 +35,7 @@ Der #neo.gls("gfw") ist die Basis für jede Probe im Spiel. Als erstes wird der 
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.unm.f)
 )
 
@@ -50,7 +50,7 @@ Anschließend wird der #neo.gls("gfw") mittels des #neo.gls-short("unm") ermitte
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.gfw.f)
 )
 
@@ -180,7 +180,7 @@ Die Bewegung während des Kampfes ist ein wichtiger Bestandteil. Hierfür wird d
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.bwr.f)
 )
 
@@ -236,7 +236,7 @@ Zuerst wird der #neo.gls-long("unm") nach folgender Formel berechnet:
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.unm.f)
 )
 
@@ -247,7 +247,7 @@ Ist dieser Berechnet wird der #neo.gls("gfw") berechnet.
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.gfw.f)
 )
 
@@ -306,7 +306,7 @@ Die Differenz misst die Präzision des Angriffs im Verhältnis zum #neo.gls("gfw
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.dif.f)
 )
 
@@ -326,7 +326,7 @@ zur Differenz sowie die Waffenstufe addiert oder subtrahiert werden.
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.anw.f)
 )
 
@@ -351,7 +351,7 @@ Erzielt ein Würfel das Ergebnis *6*, wird er unmittelbar erneut geworfen. Diese
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.ekw.f)
 )
 
@@ -380,7 +380,7 @@ Zu Beginn jeder Kampfrunde ist eine #neo.gls-long("stabi") erforderlich um siche
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.stabi.f)
 )
 
@@ -396,7 +396,7 @@ Als erstes muss die #neo.gls-short("wk") des Charakters ermittelt werden.
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.wk.f)
 )
 
@@ -415,7 +415,7 @@ Die letztendliche Reichweite wird folgendermaßen berechnet.
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.rw.f)
 )
 

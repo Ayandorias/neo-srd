@@ -8,8 +8,8 @@
 
 #let action(titel, inhalt) = {
   // Definition der Farben je nach Modus
-  let titel-farbe = amber.at("600")
-  let inhalt-farbe = gray.at("900")
+  let titel-farbe = text-key
+  let inhalt-farbe = text-main
   
   block(
     width: 100%,
@@ -27,15 +27,12 @@
   )
 }
 
-#let description(desc, dark: false) = {
-  // Definition der Textfarbe je nach Modus
-  let text-farbe = if dark { gray.at("900") } else { amber.at("900")  }
-  
+#let description(desc) = {
   block(
     pad(
       // left: 10pt, 
       // right: 10pt,
-      text(fill: text-farbe, style: "italic", desc)
+      text(fill: text-main, style: "italic", desc)
     )
   )
 }
@@ -44,9 +41,9 @@
   block(
     width: 100%,
     height: 16pt,
-    fill: gray.at("100"),
+    fill: secondary.at("100"),
     radius: 0pt,
-    stroke: (0.8pt + gray.at("400")),
+    stroke: (0.8pt + secondary.at("400")),
     align(center, heading(level: 3, numbering: none)[#inhalt])
   )
 }
@@ -194,7 +191,7 @@ font_size: 12pt) = {
 
   if trait.desc != none {
     description(trait.desc)
-    pad(align(center, v(5pt) + line(length: 30%, stroke: 0.5pt + gray.at("700")) + v(5pt)))
+    pad(align(center, v(5pt) + line(length: 30%, stroke: 0.5pt + secondary.at("700")) + v(5pt)))
   }
   
   if trait.s != none {
@@ -348,7 +345,7 @@ font_size: 12pt) = {
     width: 100%,
     height: 20pt, 
     inset: (left: 5pt),
-    fill: gray.at("100"),
+    fill: secondary.at("100"),
     block(
       height: 100%,
       // Vertikal zentrieren:

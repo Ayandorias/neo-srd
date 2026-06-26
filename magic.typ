@@ -44,7 +44,7 @@ Um eine bestehende Manifestation zu neutralisieren, legt der Arkanist eine Ferti
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, $ "Malus" = "(Komplexität − FW)" + "Intensitätsstufe" $)
 )
 
@@ -272,7 +272,7 @@ Um den Einsatzwert für die Arkane Formel zu errechnen, wird zuerst der #neo.gls
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.agw.f)
 )
 
@@ -281,7 +281,7 @@ Anschließend wird der Unerfahrenheits-Malus in Abhängigkeit zum #neo.gls("fw")
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.unmm.f)
 )
 
@@ -337,15 +337,15 @@ Das erlernen neuer Fokusse aus einer anderen Domäne erfordert, dass der Arkanis
     let pos-struktur = (162deg, r)
 
     line(pos-geist, pos-form, pos-leben, pos-elementar, pos-struktur,
-         close: true, stroke: (paint: luma(150), dash: "dashed", thickness: 1pt))
+         close: true, stroke: (paint: primary.at("300"), dash: "dashed", thickness: 1pt))
 
     line(pos-geist, pos-leben, pos-struktur, pos-form, pos-elementar,
-         close: true, stroke: (paint: black, thickness: 2pt))
+         close: true, stroke: (paint: primary.at("800"), thickness: 2pt))
 
     // 3. Funktion zum Zeichnen der Knoten (Kristalle)
     let node(pos, name) = {
       // Farbiger Außenring (Der jeweilige Illyrit-Kristall)
-      circle(pos, radius: 0.8, fill: gray.at("100"), stroke: 1pt + gray.at("400"))
+      circle(pos, radius: 0.8, fill: primary.at("100"), stroke: 1pt + primary.at("400"))
       // Beschriftung der Domäne
       content(pos, text(weight: "bold", size: 8pt, name))
     }
@@ -391,7 +391,7 @@ Gesteigert wird die AS wie eine normale Fertigkeit, allerdings mit deutlich höh
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.ks.f)
 )
 

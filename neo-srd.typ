@@ -8,30 +8,40 @@
 #let chapter-font = (
     size: 16pt, 
     font: "Controwell", 
-    fill: amber.at("700")
+    fill: text-h1
 )
 #let section-font = (
   size: 14pt, 
   font: "Controwell",
-  fill: amber.at("800")
+  fill: text-h2
 )
 
 #let subsection-font = (
   size: 12pt, 
   font: "Controwell",
-  fill: gray.at("800")//color.amber.at("800")
+  fill: text-h3
 )
 
 #let subsubsection-font = (
   size: 11pt, 
   font: "Controwell",
-  fill: gray.at("800")//color.amber.at("800")
+  fill: text-h4
 )
+
+#show table.cell: it => {
+  if it.y == 0 {
+    set text(fill: table-header-fg, weight: "bold")
+    it
+  } else {
+    set text(fill: text-main)
+    it
+  }
+}
 
 #let toc-config(body) = {
   // set list(marker: sym.arrow) // Oder ein beliebiges Zeichen wie "•" oder "‣"
   // Setzten der Standard Farbe für den Text.
-  set text(lang: "de", size: 9.5pt, font: "Libertinus Serif", fill: primary-color)
+  set text(lang: "de", size: 9.5pt, font: "Libertinus Serif", fill: text-main)
 
   // Verhalten für Kapitel Überschrift.
   show heading.where(level: 1): it => { 
@@ -49,7 +59,7 @@
     block(width: 100%)[
       #v(0.5em)
       #text(..chapter-font)[#it.body]
-      #line(length: 100%, stroke: 2pt + amber.at("700"))
+      #line(length: 100%, stroke: 2pt + text-h1)
     ]
   }
 
@@ -58,13 +68,13 @@
     block(width: 100%)[
       #text(..section-font)[#it.body]
       #v(-0.6em)
-      #line(length: 100%, stroke: 1pt + amber.at("800"))
+      #line(length: 100%, stroke: 1pt + text-h2)
       #v(0.5em)]
   }
 
   show heading.where(level: 3): it => {
     v(.5em)
-    text(..subsection-font, fill: section-color)[#it.body]
+    text(..subsection-font, fill: text-h3)[#it.body]
     v(-4pt)
   }
 
@@ -72,7 +82,7 @@
   // Global alle Überschriften ab Ebene 4 von der Nummerierung befreien
   show heading.where(level: 4): it => {
     v(.25em)
-    text(..subsubsection-font, fill: section-color)[#it.body]
+    text(..subsubsection-font, fill: text-h4)[#it.body]
     v(-2pt)
   }
   //set heading(numbering: none)
@@ -113,9 +123,9 @@
       // Einrücken basierend auf der Ebene (Level)
       let indent_size = if target.level > 2 { 0.75em } else { 0em }//(target.level - 1) * 1.5em
       let text_size = if target.level == 1 {
-        (size: 11pt, fill: amber.at("800"), weight: "bold") 
+        (size: 11pt, fill: text-h1, weight: "bold") 
       } else {
-        (size: 10pt, fill: gray.at("600")) 
+        (size: 10pt, fill: text-main) 
       }
       set text(text_size.size, text_size.fill)
 

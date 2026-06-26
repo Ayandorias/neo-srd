@@ -7,33 +7,17 @@
 Folgende Schritte werden zu Charaktergenerierung benötigt.
 Di einzelenn Punkten werden weitere unten jeweils genauer beschrieben.
 
-*1. Profession auswählen:* Jeder Charakter hat ein bestimmtes Alter erreicht und somit auch eine Profession erlernt. 
+*1. Kultur auswählen:* Jeder Charakter hat einen Geburtsort und gehört womit einer bestimmten Kultur an.
 
-*2. Kultur auswählen:* Jeder Charakter hat einen Geburtsort und gehört womit einer bestimmten Kultur an.
+*2. Profession auswählen:* Jeder Charakter hat ein bestimmtes Alter erreicht und somit auch eine Profession erlernt. 
 
 *3. Attribute:* Jede Fertigkeit, die ein Charakter im Spiel einsetzt ist mit einem der sieben Attribute verknüpft.
 
-*4. Vor- und Nachteile:* Vor- und Nachteile verleiehen jedem Charakter eine eigene Persönlichkeit.
+*4. Grundwerte:* Anhand der Attribute werden die Grundwerte des Charakters berechnet.
 
-*5. Grundwerte:* Anhand der Attribute werden die Grundwerte des Charakters berechnet.
+*5. Vor- und Nachteile:* Vor- und Nachteile verleiehen jedem Charakter eine eigene Persönlichkeit.
 
 *6. Fertigkeiten:* Anhand der Vorgeschichte werden die Fertigkeiten des Charakters ausgewählt.
-
-== Profession auswählen
-In der Tabelle Professionen sind einige Beispiele aufgeführt an denen man sich orientieren kann. Wenn ein individueller Charakter erstellt werden soll, dann kann dieser Schritt übersprungen werden.
-
-=== Professionen
-#table(
-  columns: (auto, 1fr),
-  align: (left, left),
-  stroke: table-stroke,
-  fill: table-fill,
-  [*Profession*],[*Beschreibung*],
-  ..neo.professionen.map(item => (
-    [#item.name], 
-    [#item.desc],
-  )).flatten()
-)
 
 == Kultur auswählen
 In der Tabelle über die Kulturen kann ausgewählt werden aus welchem Bereich der Welt der Charakter kommt.
@@ -46,6 +30,22 @@ In der Tabelle über die Kulturen kann ausgewählt werden aus welchem Bereich de
   fill: table-fill,
   [*Kultur*], [*Beschreibung*],
   ..neo.culture.map(item => (
+    [#item.name], 
+    [#item.desc],
+  )).flatten()
+)
+
+== Profession auswählen
+In der Tabelle Professionen sind einige Beispiele aufgeführt an denen man sich orientieren kann. Wenn ein individueller Charakter erstellt werden soll, dann kann dieser Schritt übersprungen werden.
+
+=== Professionen
+#table(
+  columns: (auto, 1fr),
+  align: (left, left),
+  stroke: table-stroke,
+  fill: table-fill,
+  [*Profession*],[*Beschreibung*],
+  ..neo.professionen.map(item => (
     [#item.name], 
     [#item.desc],
   )).flatten()
@@ -66,14 +66,6 @@ Diese werden in Körperliche Attribute und geistige Attribute unterteilt.
 ==== Attributswerte
 Jedes Attribut beginnt mit einem Basiswert von 6. Es können weitere 28 Punkte auf die sieben Attribute aufgeteilt werden. Dabei muss beachtet werden, dass kein Attribut über den Wert von 12 gesteigert wird.
 
-== Vor- und Nachteile
-Um den Charakter zu individualisieren können Vor- und Nachteile eingesetzt werden. Hierbei t, dass für jede eingesetzte Stufe bei den Vorteilen zwei Stufen bei den Nachteilen eingesetzt werden müssen.
-
-==== Einschränkung
-Jeder Charakter kann max. 9 Stufen an Vorteilen haben. Dafür müssen dann aber Nachteile in einer Gesamthöhe von 18 Stufen ausgewählt werden.
-
-==== Erzeugen
-Vor- und Nachteile können während des Charakterlebens hinzugefügt werden. Diese werden entweder durch den Spielleiter vergeben oder in Rücksprache mit diesem getroffen.
 
 == Abgeleiteten Grundwerte
 
@@ -88,7 +80,7 @@ Der Quotient der Formel:
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.bwr.f)
 )
 
@@ -102,7 +94,7 @@ Die Reaktion bezieht sich immer auf die aktuelle Kampffertigkeit die eingesetzt 
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.rkt.f)
 )
 
@@ -112,7 +104,7 @@ Der Verteidiger zwingt dem Angreifer einen Malus in Höhe seiner #neo.gls-short(
 #table(
   columns: (auto, 1fr),
   stroke: table-stroke,
-  fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
+  fill: table-fill, //(x, y) => if y == 0 { secondary.at("300") } else if calc.even(y) { secondary.at("100") } else { white },
   align: (center + horizon, left),
   ..neo.psych-res
 )
@@ -121,12 +113,13 @@ Der Verteidiger zwingt dem Angreifer einen Malus in Höhe seiner #neo.gls-short(
 #table(
   columns: (auto, 1fr),
   stroke: table-stroke,
-  fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
+  fill: table-fill, //(x, y) => if y == 0 { secondary.at("300") } else if calc.even(y) { secondary.at("100") } else { white },
   align: (center + horizon, left),
   ..neo.phys-res
 )
 
-== Gesundheitszustand
+
+// == Gesundheitszustand
 
 === #neo.gls-long("gem")
 Die Geistige Ermüdung stellt die maximale mentale Belastbarkeit des Charakters dar. Dieser Pool gibt an, wie viel geistige Kraft, Willensstärke und absolute Konzentration ein Charakter aufbringen kann, um magische Energien zu formen, bevor sein Verstand erschöpft ist.
@@ -134,7 +127,7 @@ Die Geistige Ermüdung stellt die maximale mentale Belastbarkeit des Charakters 
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.gem.f )
 )
 
@@ -154,17 +147,6 @@ Wird im Verlauf des Charakterlebens die geistige Stabilität beeinträchtigt, ka
 === Geistige Regeneration
 Der Verlust von geistiger Stabilität kann geheilt werden. Wenn sich der Charakter mental erholt, kann der Spielleiter die Regeneration erlauben. 
 
-
-
-
-
-
-
-
-
-
-
-
 === Lebensenergie
 Jeder Charakter besitzt über die gleiche Höhe an Lebensenergie. Diese ist in drei Bereiche unterteilt.
 
@@ -177,9 +159,19 @@ Jeder Charakter besitzt über die gleiche Höhe an Lebensenergie. Diese ist in d
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.ulw.f)
 )
+
+
+== Vor- und Nachteile
+Um den Charakter zu individualisieren können Vor- und Nachteile eingesetzt werden. Hierbei t, dass für jede eingesetzte Stufe bei den Vorteilen zwei Stufen bei den Nachteilen eingesetzt werden müssen.
+
+==== Einschränkung
+Jeder Charakter kann max. 9 Stufen an Vorteilen haben. Dafür müssen dann aber Nachteile in einer Gesamthöhe von 18 Stufen ausgewählt werden.
+
+==== Erzeugen
+Vor- und Nachteile können während des Charakterlebens hinzugefügt werden. Diese werden entweder durch den Spielleiter vergeben oder in Rücksprache mit diesem getroffen.
 
 == Fertigkeiten auswählen
 Nachdem die grundlegenden Informationen des Charakters aufgeschrieben sind, werden im nächsten Schritt die Fertigkeiten ausgewählt.
@@ -190,7 +182,7 @@ Die Anzahl an Fertigkeiten, die einem Charakter zur Verfügung stehen liegt bei:
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.fa.f)
 )
 
@@ -199,7 +191,7 @@ Nachdem die Fertigkeiten ausgewählt wurden, kann der Charakter individualisiert
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.fp.f)
 )
 
@@ -212,19 +204,19 @@ Falls gewünscht kann der Einstig auch mit einem Erfahreneren Charakter gestarte
 #table(
   columns: (auto, auto, 1fr),
   stroke: table-stroke,
-  fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
+  fill: table-fill, //(x, y) => if y == 0 { secondary.at("300") } else if calc.even(y) { secondary.at("100") } else { white },
   align: (center + horizon, center + horizon, left),
   ..neo.level-desc
 )
 
 Anschließend sucht der Spielleiter sich die nötigen#neo.gls("ep") aus der folgenden Tabelle.
 
-#text(size: 12pt, weight: "bold", "Allgemeine Modifikatoren")
+#text(size: 12pt, weight: "bold", "Stufe vs EP")
 #v(-6pt)
 #table(
   columns: (1fr, auto, auto),
   stroke: table-stroke,
-  fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
+  fill: table-fill, //(x, y) => if y == 0 { secondary.at("300") } else if calc.even(y) { secondary.at("100") } else { white },
   align: (left, center, center),
   ..neo.level
 )
@@ -264,7 +256,7 @@ Die Intelligenz ist nicht von der Anzahl der Fertigkeiten oder deren #neo.gls("f
 #table(
   columns: (1fr, 1fr, 1fr),
   stroke: table-stroke,
-  fill: table-fill, //(x, y) => if y == 0 { gray.at("300") } else if calc.even(y) { gray.at("100") } else { white },
+  fill: table-fill, //(x, y) => if y == 0 { secondary.at("300") } else if calc.even(y) { secondary.at("100") } else { white },
   align: (center,),
   ..neo.int-level
 )
@@ -275,7 +267,7 @@ Jede Fertigkeit besitzt eine Trainingsstufe. Mit dessen Hilfe wird ermittelt wie
 #block(
   width: 100%,
   height: 60pt,
-  stroke: 1pt + amber.at("600"),
+  stroke: block-stroke,
   align(center + horizon, neo.formula.epf.f)
 )
 
